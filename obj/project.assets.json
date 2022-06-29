@@ -302,11 +302,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\talha\\source\\repos\\Swagger_run_with_Docker\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\talha\\source\\repos\\Swagger_run_with_Docker\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\talha\\source\\repos\\Swagger_run_with_Docker\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "C:\\Users\\talha\\source\\repos\\Swagger_run_with_Docker\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\talha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\talha\\source\\repos\\Swagger_run_with_Docker\\WebApplication1\\obj\\",
+      "outputPath": "C:\\Users\\talha\\source\\repos\\Swagger_run_with_Docker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
