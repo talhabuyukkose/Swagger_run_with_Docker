@@ -5,6 +5,8 @@ WORKDIR /app
 
 EXPOSE 5024
 
+ENV ASPNETCORE_URLS=http://+:5024
+
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["WebApplication1.csproj", "."]

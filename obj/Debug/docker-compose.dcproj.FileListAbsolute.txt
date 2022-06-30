@@ -1,0 +1,14 @@
+C:\Users\talha\source\repos\Swagger_run_with_Docker\bin\Debug\WebApplication1.deps.json
+C:\Users\talha\source\repos\Swagger_run_with_Docker\bin\Debug\WebApplication1.runtimeconfig.json
+C:\Users\talha\source\repos\Swagger_run_with_Docker\bin\Debug\appsettings.Development.json
+C:\Users\talha\source\repos\Swagger_run_with_Docker\bin\Debug\appsettings.json
+C:\Users\talha\source\repos\Swagger_run_with_Docker\bin\Debug\WebApplication1.exe
+C:\Users\talha\source\repos\Swagger_run_with_Docker\bin\Debug\WebApplication1.dll
+C:\Users\talha\source\repos\Swagger_run_with_Docker\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\talha\source\repos\Swagger_run_with_Docker\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\talha\source\repos\Swagger_run_with_Docker\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\talha\source\repos\Swagger_run_with_Docker\bin\Debug\Microsoft.OpenApi.dll
+C:\Users\talha\source\repos\Swagger_run_with_Docker\bin\Debug\WebApplication1.pdb
+C:\Users\talha\source\repos\Swagger_run_with_Docker\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\Users\talha\source\repos\Swagger_run_with_Docker\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\talha\source\repos\Swagger_run_with_Docker\obj\Debug\docker-compose.dcproj.CopyComplete
