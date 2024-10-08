@@ -19,7 +19,7 @@ jobs:
 
     # 2. Docker imajını oluşturma
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag webapp:$(date +%s)
+      run: docker build . --tag webapp:$(date +%s)
 
     # 3. Uzak sunucuya SSH ile bağlanma ve Docker işlemleri
     - name: Deploy to server
