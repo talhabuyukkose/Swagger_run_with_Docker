@@ -26,7 +26,7 @@ jobs:
       run: dotnet restore "WebApplication1.csproj"
 
     - name: Build and publish the project
-      run: dotnet publish "WebApplication1.csproj" -c Release -o /app/publish
+      run: dotnet publish "WebApplication1.csproj" -c Release -o ./publish
 
     # 3. Docker imajını oluşturma (Build the Docker image)
     - name: Build Docker image
