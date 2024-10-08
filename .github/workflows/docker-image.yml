@@ -12,15 +12,27 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    # 1. Depoyu klonlama
+    # 1. Depoyu klonlama (Checkout the repository)
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # 2. Docker imajını oluşturma
-    - name: Build the Docker image
-      run: docker build -t webapp:$(date +%s)
+    # 2. .NET SDK ile restore ve publish işlemleri (Restore and publish with .NET SDK)
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0.x'
 
-    # 3. Uzak sunucuya SSH ile bağlanma ve Docker işlemleri
+    - name: Install dependencies
+      run: dotnet restore "WebApplication1.csproj"
+
+    - name: Build and publish the project
+      run: dotnet publish "WebApplication1.csproj" -c Release -o /app/publish
+
+    # 3. Docker imajını oluşturma (Build the Docker image)
+    - name: Build Docker image
+      run: docker build -t webapp:$(date +%s) .
+
+    # 4. Uzak sunucuya SSH ile bağlanma ve Docker işlemleri (Deploy to the remote server)
     - name: Deploy to server
       uses: appleboy/ssh-action@v0.1.6
       with:
@@ -29,9 +41,9 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
-          # Docker container'ı durdurup kaldır (eğer var ise)
+          # Docker container'ı durdurup kaldır (Stop and remove the running container, if it exists)
           docker stop webapp || true
           docker rm webapp || true
-          
-          # Yeni imajı çalıştırma
+
+          # Yeni imajı çalıştırma (Run the new image)
           docker run -d --name webapp -p 5024:5024 webapp:latest
