@@ -1,0 +1,38 @@
+name: Docker Build and Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Depoyu klonlama
+    - name: Checkout repository
+    - uses: actions/checkout@v4
+
+    # 2. Docker imajını oluşturma
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag webapp:$(date +%s)
+
+    # 3. Uzak sunucuya SSH ile bağlanma ve Docker işlemleri
+    - name: Deploy to server
+      uses: appleboy/ssh-action@v0.1.6
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.SSH_PORT }}
+        script: |
+          # Docker container'ı durdurup kaldır (eğer var ise)
+          docker stop webapp || true
+          docker rm webapp || true
+          
+          # Yeni imajı çalıştırma
+          docker run -d --name webapp -p 5024:5024 webapp:latest
