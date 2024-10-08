@@ -5,13 +5,11 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+    types: [closed]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     # 1. Depoyu klonlama
     - name: Checkout repository
@@ -19,7 +17,7 @@ jobs:
 
     # 2. Docker imajını oluşturma
     - name: Build the Docker image
-      run: docker build . --tag webapp:$(date +%s)
+      run: docker build -t webapp:$(date +%s)
 
     # 3. Uzak sunucuya SSH ile bağlanma ve Docker işlemleri
     - name: Deploy to server
